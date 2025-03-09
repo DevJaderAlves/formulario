@@ -10,7 +10,7 @@ export default function ListaDepoimentos() {
   }, []);
 
   const buscarDepoimentos = async () => {
-    const res = await fetch("http://localhost:3001/depoimentos");
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/depoimentos`);
     const data = await res.json();
     setDepoimentos(data);
   };
@@ -30,3 +30,5 @@ export default function ListaDepoimentos() {
     </div>
   );
 }
+
+

@@ -12,7 +12,7 @@ export default function ReceberDepoimento({ atualizarLista }) {
     
     const novoDepoimento = { nome, comentario, nota };
 
-    const res = await fetch("http://localhost:3001/depoimentos", {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/depoimentos`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(novoDepoimento),
